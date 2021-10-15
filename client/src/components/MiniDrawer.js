@@ -15,9 +15,9 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
-import LightbulbIcon from '@mui/icons-material/Lightbulb';
-import ListAltIcon from '@mui/icons-material/ListAlt';
+import {MiniDrawerData} from './MiniDrawerData'
+import { Link } from 'react-router-dom';
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -127,24 +127,16 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-            <ListItem button>
-              <ListItemIcon>
-                <SubscriptionsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Subscriptions" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <LightbulbIcon />
-              </ListItemIcon>
-              <ListItemText primary="Keep Notes" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <ListAltIcon />
-              </ListItemIcon>
-              <ListItemText primary="To-Do List" />
-            </ListItem>
+          {MiniDrawerData.map((text, index) => (
+            <Link to={text.path}> 
+              <ListItem button key={text}>
+                <ListItemIcon>
+                  {text.icon}
+                </ListItemIcon>
+                <ListItemText primary={text.title} />
+              </ListItem>
+            </Link>
+          ))}
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
