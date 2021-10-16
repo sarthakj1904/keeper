@@ -1,19 +1,28 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import MiniDrawer from './components/MiniDrawer';
 import Subscriptions from './pages/Subscriptions';
-import Todo from './pages/Notes';
-import Notes from './pages/Todo';
+import Todo from './pages/Todo';
+import Notes from './pages/Notes';
 
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <MiniDrawer />
         <Switch>
-          <Route path ='/' exact component={Subscriptions} />
-          <Route path ='/todo' component={Todo} />
-          <Route path ='/notes' component={Notes} />
+          <Route path ='/' exact>
+            <Notes />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path ='/todo' exact>
+            <Todo />
+          </Route>
+        </Switch>
+        <Switch>
+          <Route path ='/subscriptions' exact>
+            <Subscriptions />
+          </Route>
         </Switch>
       </Router>
     </div>

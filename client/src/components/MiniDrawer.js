@@ -133,7 +133,7 @@ export default function MiniDrawer() {
                 <ListItemIcon>
                   {text.icon}
                 </ListItemIcon>
-                <ListItemText primary={text.title} />
+                <ListItemText primary={text.title} /> 
               </ListItem>
             </Link>
           ))}

@@ -4,9 +4,9 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 
 export const MiniDrawerData = [
     {
-        title: 'Subscriptions',
+        title: 'Notes',
         path: '/',
-        icon: <SubscriptionsIcon />
+        icon: <LightbulbIcon />
     },
     {
         title: 'To-Do List',
@@ -14,8 +14,8 @@ export const MiniDrawerData = [
         icon: <ListAltIcon />
     },
     {
-        title: 'Notes',
-        path: '/notes',
-        icon: <LightbulbIcon />
-    }
+        title: 'Subscriptions',
+        path: '/subscriptions',
+        icon: <SubscriptionsIcon />
+    },
 ]
