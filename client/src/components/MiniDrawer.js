@@ -126,14 +126,14 @@ export default function MiniDrawer() {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        <List sx={{textDecoration:'none'}}>
           {MiniDrawerData.map((text, index) => (
-            <Link to={text.path}> 
-              <ListItem button key={text}>
+            <Link to={text.path} > 
+              <ListItem button key={text} >
                 <ListItemIcon>
                   {text.icon}
                 </ListItemIcon>
-                <ListItemText primary={text.title} /> 
+                <ListItemText primary={text.title} sx={{color:'#000000'}}/> 
               </ListItem>
             </Link>
           ))}
